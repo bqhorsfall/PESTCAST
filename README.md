@@ -8,7 +8,7 @@
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-Poisson%20GLM-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> USDA APHIS PPQ × CSU Hackathon 2026 · Prompt 1 · Six target species · Two complementary front ends · CY2026 forecasts + 90-day operational window.
+> USDA APHIS PPQ × CSU Hackathon 2026 · Prompt 1 Winning Solution · Six target species · Two complementary front ends · CY2026 forecasts + 90-day operational window.
 
 ---
 
