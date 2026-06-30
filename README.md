@@ -266,9 +266,9 @@ DATA_PLAN.md                   full data acquisition plan and source rationale
 - **Poisson GLM, not a deep model.** Pseudo-R² of 0.68 on 52 detection events is solid for this data volume, but the model has limited capacity to capture non-linear interactions between pathway pressure and establishment suitability. A richer model would require substantially more labeled interception records.
 - **Deterministic risk index (Leaflet).** The static dashboard's composite score — volume × pest_score — is interpretable and auditable, but it is not calibrated against detection frequency. Two countries with the same score can have meaningfully different real-world introduction probabilities.
 - **EPPO presence scores are coarse.** The three-tier presence score (widespread / restricted / transient) collapses substantial within-country heterogeneity. Sub-national pest distribution data was not available at the required geographic resolution for all six species.
-- **CDL 2024 used as the 2025 host crop mask.** The official 2025 CDL is released after harvest; year-over-year host pixel agreement is ~85% for the relevant crops.
+- **CDL is a single-year host mask.** The host-crop layer uses the 2025 USDA CDL clip (`cdl_2025_clipped.tif`). As an annual crop-specific raster it captures a single season's planting and does not reflect within-year or year-to-year crop rotation.
 - **T-100 and GATS data require manual export.** These datasets cannot be auto-fetched programmatically due to portal limitations. The pipeline degrades gracefully if either is absent, but risk score coverage will be reduced.
-- **Uncertainty is not quantified.** Unlike a Bayesian or ensemble approach, the Poisson GLM produces point forecasts without credible intervals. The 90-day operational window label reflects temporal reliability, not probabilistic confidence.
+- **Uncertainty is only partially quantified.** The Poisson GLM does emit 80% confidence intervals on the predicted mean (μ) — `mu_lo80`/`mu_hi80` from `03_fit_risk_model.py` — but these are (a) *frequentist* confidence intervals on the fitted mean, **not** Bayesian credible intervals, and (b) not full predictive intervals over counts (they exclude Poisson dispersion around μ). The 90-day operational window label reflects temporal reliability, not probabilistic confidence.
 
 ---
 
