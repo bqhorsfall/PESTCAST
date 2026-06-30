@@ -12,7 +12,7 @@ of which detection events the model has seen — that mirrors the operational
 forecast use case where you predict the future from features that exist.
 
 Test windows (chosen because Q1/Q2 2025 had too few events to evaluate against):
-    Q3 2025 (Jul–Sep)  — 24 events
+    Q3 2025 (Jul–Sep)  — 23 events
     Q4 2025 (Oct–Dec)  — 20 events
 
 Metrics reported per window:

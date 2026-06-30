@@ -7,13 +7,17 @@ Features per (state, month, species):
     log1p(infested_passengers)   passengers from countries where THIS species is present
     log1p(infested_freight_kg)   air freight kg, same filter
     log1p(infested_host_kg)      USDA host-commodity imports kg, same filter
-    species fixed effect (3 levels)
+    species fixed effect (6 levels; see SPECIES_MAP)
     month fixed effect (12 levels)
 
 Validation target:
     APHIS PDR detection events, aggregated to (state, month, species). The
-    sample is small (~50 events for our 3 target species across 2018-2026),
-    so coefficients should be read as illustrative, not definitive.
+    panel spans 6 species / 52 events, but the label-validated detections are
+    concentrated in 3 (capitata / dorsalis / ludens); the other three species
+    have near-zero observed counts. The sample is small, so coefficients should
+    be read as illustrative, not definitive. The dominant, highly significant
+    driver is infested passengers (log_pass, p<0.001) alongside seasonality;
+    the freight and host-commodity import terms are weak / not significant.
 
 Why no state fixed effect?
     With 4 states present in the validation set (CA, TX, NY, plus a generic

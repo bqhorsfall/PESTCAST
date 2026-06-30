@@ -98,7 +98,7 @@ data/
     eppo_pest_presence.csv      # hand-built from EPPO
     gats_host_imports.csv       # exported from GATS
     worldclim_us_monthly.tif
-    cdl_2024.tif
+    cdl_2025_clipped.tif
   processed/
     pathway_volumes.parquet     # T-100 cleaned and filtered
     origin_risk.parquet         # pest presence × seasonal severity per country-month

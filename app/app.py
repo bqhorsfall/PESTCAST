@@ -774,7 +774,7 @@ def _build_briefing_html(species: str, month: int, annual_sp: pd.DataFrame,
 
 <h2>Top 10 cells — {month_name} CY{FORECAST_YEAR}</h2>
 <table>
-  <tr><th>County</th><th>State</th><th>Combined</th><th>80% credible interval</th></tr>
+  <tr><th>County</th><th>State</th><th>Combined</th><th>80% confidence interval on predicted intensity</th></tr>
   {monthly_rows}
 </table>
 

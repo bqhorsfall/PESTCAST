@@ -178,9 +178,10 @@ def predict_county_mu(features: pd.DataFrame) -> pd.DataFrame:
     sums = df.groupby(["state", "month", "species"])["raw_mu"].transform("sum")
     df["mu_pathway"] = np.where(sums > 0, df["raw_mu"] * df["state_mu"] / sums, 0.0)
 
-    # Propagate state-level Poisson 80% credible intervals down to county level by
-    # the same scaling factor. The interval is wide because of the small validation
-    # sample, but the relative ratios between counties within a state are preserved.
+    # Propagate state-level 80% confidence intervals on the predicted mean (μ) down
+    # to county level by the same scaling factor. The interval is wide because of the
+    # small validation sample, but the relative ratios between counties within a state
+    # are preserved.
     ci = state_pred.rename(columns={"mu_lo80": "state_mu_lo80", "mu_hi80": "state_mu_hi80"})[
         ["state", "month", "species", "state_mu_lo80", "state_mu_hi80"]
     ]
